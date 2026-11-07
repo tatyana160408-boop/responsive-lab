@@ -1,25 +1,157 @@
-/*
-  Пишите свои стили ниже. Сохраняйте файл и обновляйте страницу.
-  Начинайте каждый селектор с класса задания, например .task-01 .meter.
-  Внутри @media тоже указывайте класс задания.
-*/
 
-/* 01. Полоска в половину контейнера */
+.task-01 .meter {
+  width: 50%;
+}
 
-/* 02. Карточка с полями */
+.task-02 .note {
+  width: 90%;
+  max-width: 420px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
 
-/* 03. Баннер, который растёт вместе с окном */
+.task-03 .banner {
+  min-height: 25vh;
+}
 
-/* 04. Заголовок в двух размерах */
+.task-04 .headline {
+  font-size: 24px;
+}
 
-/* 05. Из колонки в ряд */
+.task-05 .actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
 
-/* 06. Меню из трёх ссылок */
+.task-06 .menu {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
 
-/* 07. Каталог на одну, две и три колонки */
+.task-06 .menu a {
+  padding: 0.5rem;
+}
 
-/* 08. Фото с подписью */
+.task-07 .catalog {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
 
-/* 09. Первый экран с гибкой типографикой */
+.task-08 .photo {
+  margin: 0;
+}
 
-/* 10. Мини-страница мастерской */
+.task-08 .photo img {
+  width: 100%;
+  height: auto;
+}
+
+.task-09 .hero {
+  min-height: 35vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.task-09 .hero h3 {
+  font-size: clamp(24px, 6vw, 56px);
+}
+
+.task-10 .workshop {
+  width: 95%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.task-10 .workshop-menu,
+.task-10 .workshop-intro,
+.task-10 .workshop-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.task-10 .workshop-menu a,
+.task-10 .workshop-card {
+  padding: 0.5rem;
+}
+
+.task-10 .workshop-intro {
+  margin: 1rem 0;
+}
+
+.task-10 .workshop-intro img {
+  width: 100%;
+  height: auto;
+}
+
+.task-10 .workshop-card {
+  min-width: 0;
+}
+
+@media (min-width: 600px) {
+  .task-04 .headline {
+    font-size: 40px;
+  }
+
+  .task-06 .menu {
+    flex-direction: row;
+  }
+
+  .task-07 .catalog {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 640px) {
+  .task-05 .actions,
+  .task-10 .workshop-menu,
+  .task-10 .workshop-intro {
+    flex-direction: row;
+  }
+
+  .task-10 .workshop-intro img {
+    width: 40%;
+    object-fit: contain;
+    align-self: flex-start;
+  }
+
+  .task-10 .workshop-intro p {
+    flex: 1;
+  }
+}
+
+@media (min-width: 700px) {
+  .task-08 .photo {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+
+  .task-08 .photo img {
+    width: 55%;
+  }
+
+  .task-08 .photo figcaption {
+    flex: 1;
+  }
+}
+
+@media (min-width: 900px) {
+  .task-07 .catalog {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .task-10 .workshop-cards {
+    flex-direction: row;
+  }
+
+  .task-10 .workshop-card {
+    flex: 1;
+  }
+}
+
